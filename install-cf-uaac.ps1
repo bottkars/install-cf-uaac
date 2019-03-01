@@ -1,0 +1,43 @@
+
+<#PSScriptInfo
+
+.VERSION 1.0
+
+.GUID 50c63250-0c33-484e-a482-b76569b2f52c
+
+.AUTHOR Kbott@pivotal.io
+
+.COMPANYNAME
+
+.COPYRIGHT
+
+.TAGS
+
+.LICENSEURI
+
+.PROJECTURI
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+
+
+.PRIVATEDATA
+
+#>
+
+<# 
+
+.DESCRIPTION 
+ Install Ruby Environment and cf-uaac for Cloudfoundry 
+
+#> 
+Param()
+
+
