@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 0.1
+.VERSION 0.2
 
 .GUID 50c63250-0c33-484e-a482-b76569b2f52c
 
@@ -39,6 +39,7 @@
 
 #> 
 Param()
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $request = Invoke-WebRequest https://rubyinstaller.org/downloads/
 $Download_Links = $request.Links | where class -match downloadlink 
 $Devkits = $Download_Links | where {$_.innerHTML -Match [Regex]::Escape("Ruby+Devkit 2.5")}
