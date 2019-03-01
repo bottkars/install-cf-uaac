@@ -46,8 +46,8 @@ $Devkits = $Download_Links | where {$_.innerHTML -Match [Regex]::Escape("Ruby+De
 $Downloadlink = ($Devkits | where href -Match x64 | Select-Object -First 1).href
 $downloadfile = "$HOME/Downloads/$(Split-Path -Leaf $Downloadlink)"
 Invoke-WebRequest -UseBasicParsing -Uri $Downloadlink -OutFile $downloadfile
-Start-Process $DownloadFile -ArgumentList '/SILENT /Dir="C:\Ruby25" /Components="ruby,msys2" /Group="Ruby 2.5.3-1-x64 with MSYS2" SetupType=custom'
+Start-Process $DownloadFile -ArgumentList '/SILENT /Dir="C:\Ruby25" /Components="ruby,msys2" /Group="Ruby 2.5.3-1-x64 with MSYS2" SetupType=custom' -Wait
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 gem uninstall eventmachine --force
 gem install eventmachine --platform ruby
 gem install cf-uaac
-
